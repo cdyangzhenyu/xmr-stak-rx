@@ -1,0 +1,12 @@
+[Unit]
+Description = Miner XMR Service
+After = rc.local.service
+
+[Service]
+Type = simple
+User = root
+Group = root
+ExecStart = /usr/local/bin/xmr-stak-rx --config /etc/xmr-stak-rx/config.txt --poolconf /etc/xmr-stak-rx/pools.txt --cpu /etc/xmr-stak-rx/cpu.txt --noTest 
+
+[Install]
+WantedBy = multi-user.target
